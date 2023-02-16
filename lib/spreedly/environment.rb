@@ -286,6 +286,7 @@ module Spreedly
       build_xml_request('delivery') do |doc|
         doc.payment_method_token payment_method_token
         doc.url receiver_options[:url]
+        doc.request_method receiver_options[:request_method]
         doc.headers do
           doc.cdata receiver_options[:headers].map { |k, v| "#{k}: #{v}" }.join("\r\n")
         end
